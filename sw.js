@@ -1,6 +1,6 @@
 // Asteroids Neon offline cache. Pages first try the network so updates arrive; files are cache-first.
-const CACHE = 'asteroids-neon-2e23a54d03fc';
-const FILES = ["./","apple-touch-icon.png","assets/index--dv91CaZ.js","icon-192.png","icon-512.png","icon-maskable-512.png","manifest.webmanifest"];
+const CACHE = 'asteroids-neon-facc8582cf85';
+const FILES = ["./","apple-touch-icon.png","assets/index-ZiDubmz3.js","icon-192.png","icon-512.png","icon-maskable-512.png","manifest.webmanifest"];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
